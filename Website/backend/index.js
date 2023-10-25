@@ -14,7 +14,7 @@ const client = new Client.Client({
 })
 client.connect(function(err) {
   if (err) throw err;
-  console.log("Connected!");
+  console.log("Connected! YAY Good Job!");
 });
 
 //dependencies
