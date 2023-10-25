@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Proxy Detector</title>
+    <link rel="stylesheet" href="css/style.css">
+  
+  </head>
+
+  <div class="container">
+  <form action="action_page.php">
+
+    <label for="sLocation">Where is your server located?</label>
+    <input type="text" id="sLocation" name="sLocation" placeholder="Server Location">
+
+    <label for="SIP">Server IP</label>
+    <input type="text" id="sip" name="sip" placeholder="Server IP">
+
+    <label for="cDistance">Whats the Distance from you to the Proxy?</label>
+    <input type="text" id="cdistance" name="cdistance" placeholder="Client Distance">
+
+    <label for="pDistance">Whats the Distance from the Proxy to the RTT Server?</label>
+    <input type="text" id="pdistance" name="pdistance" placeholder="Proxy Distance">
+
+    <label for="cISP">Whats your ISP</label>
+    <input type="text" id="cisp" name="cisp" placeholder="Client ISP">
+
+    <label for="pISP">Whats the Proxy ISP</label>
+    <input type="text" id="pisp" name="psip" placeholder="Proxy ISP">
+
+    <label for="sISP">Whats the Server ISP</label>
+    <input type="text" id="sISP" name="sISP" placeholder="Server ISP">
+
+    <div id="wrapper">
+      <label for="yes_no_radio">Is this a transatlantic connection?</label>
+    <p>
+    <input type="radio" name="yes_no" checked>Yes</input>
+    </p>
+    <p>
+    <input type="radio" name="yes_no">No</input>
+    </p>
+    </div>
+
+    <br>
+    <br>
+  </form>
+  <button onclick="location.href='test1.html'">Test my Proxy</button>
+</div>
+
+
+</html>
+
