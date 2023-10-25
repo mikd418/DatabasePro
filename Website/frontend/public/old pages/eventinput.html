@@ -23,43 +23,44 @@
       Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Meeting Makers</title>
-  <nav> 
+-->
+    <title>Proxy Detector</title>
+     <!-- <nav> 
     <a href="index.html"> Home Page</a>
     <a href="userHome.html">User Home Page </a>
     <a href="loginpage.html"> Login</a>
   </nav>
-  
+-->
+
     <link rel="stylesheet" href="css/style.css">
   
   </head>
 
   <div class="container">
   <form action="action_page.php">
-<!-- Organization inputs-->
-    <label for="oname">Company Name</label>
-    <input type="text" id="oname" name="oname" placeholder="Company name">
+<!-- Deivce inputs-->
+    <label for="DLocation">Device Location</label>
+    <input type="text" id="DLocation" name="DLocation" placeholder="Where is your device located?">
 
-    <label for="oaddress">Company Address</label>
-    <input type="text" id="oaddress" name="oaddress" placeholder="Company street address">
+    <label for="DIP">Device IP Address</label>
+    <input type="text" id="DIP" name="DIP" placeholder="Device IP Address">
 
-    <label for="ocity">City</label>
-    <input type="text" id="ocity" name="ocity" placeholder="City">
+    <label for="DCDistance">Device to Client Distance (km)</label>
+    <input type="text" id="DCDistance" name="DCDistance" placeholder="Distance to Client in km">
 
-    <label for="ostate">State</label>
-    <input type="text" id="ostate" name="ostate" placeholder="State">
+    <label for="DPDistance">Distance to Proxy</label>
+    <input type="text" id="DPDistance" name="DPDistance" placeholder="Distance to Proxy in km">
 
-    <label for="ozip">Zipcode</label>
-    <input type="text" id="ozip" name="ozip" placeholder="Zipcode">
+    <label for="DCISP">Client ISP</label>
+    <input type="text" id="DCISP" name="DCISP" placeholder="Device Client ISP">
 
-    <label for="oemail">Email</label>
-    <input type="text" id="oemail" name="oemail" placeholder="Contact Email">
+    <label for="DPISP">Proxy ISP</label>
+    <input type="text" id="DPISP" name="DPISP" placeholder="Device Proxy ISP">
 
-    <label for="ophone">Phone</label>
-    <input type="text" id="ophone" name="ophone" placeholder="Contact Phone number">
+    <label for="DSISP">Server ISP</label>
+    <input type="text" id="DPISP" name="DPISP" placeholder="Device Server ISP">
 
-<!-- Conference inputs-->
+    <!-- Conference inputs
     <label for="cname">Conference Name</label>
     <input type="text" id="cname" name="cname" placeholder="Conference name">
 
@@ -90,13 +91,10 @@
       <option value="150,000+">Above $150,000</option>
     </select>
 
-      <!-- Not sure how to do attendees - do we need to? -->
-
-      <!-- Didn't include hotel - do we need to? -->
 
     <label for="subject">Extra Info</label>
     <textarea id="subject" name="subject" placeholder="Anything else we need to know.." style="height:200px"></textarea>
-
+-->
     <input type="submit" value="Submit">
 
   </form>

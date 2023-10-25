@@ -6,17 +6,17 @@ import { useParams } from 'react-router-dom';
 
 
 const Update = () => {
-  const { cid } = useParams(); // Extract conferenceId from URL
+  const { did } = useParams(); // Extract conferenceId from URL
   const [newForm, setNewForm] = useState({
-    cname : ""
+    dlocation : ""
   });
 
   const handleSubmit = async (e) => {
     
     try {
-      await axios.put(`http://localhost:8080/updateName/${cid}`, newForm);
+      await axios.put(`http://localhost:8080/updateLocation/${did}`, newForm);
         setNewForm({ 
-          cname : ""
+          dlocation : ""
          }); // reset the form
     } catch(err) {
         console.error(err.message); //console log the error
@@ -25,9 +25,9 @@ const Update = () => {
   const handleSubmit2 = async (e) => {
     
     try {
-      await axios.put(`http://localhost:8080/updateStart/${cid}`, newForm);
+      await axios.put(`http://localhost:8080/updateCISP/${did}`, newForm);
         setNewForm({ 
-          cstartdate : ""
+          dcisp : ""
          }); // reset the form
     } catch(err) {
         console.error(err.message); //console log the error
@@ -36,9 +36,9 @@ const Update = () => {
   const handleSubmit3 = async (e) => {
     
     try {
-      await axios.put(`http://localhost:8080/updateEnd/${cid}`, newForm);
+      await axios.put(`http://localhost:8080/updatePISP/${did}`, newForm);
         setNewForm({ 
-          cenddate : ""
+          dpisp : ""
          }); // reset the form
     } catch(err) {
         console.error(err.message); //console log the error
@@ -47,9 +47,9 @@ const Update = () => {
   const handleSubmit4 = async (e) => {
     
     try {
-      await axios.put(`http://localhost:8080/updateCity/${cid}`, newForm);
+      await axios.put(`http://localhost:8080/updateSISP/${did}`, newForm);
         setNewForm({ 
-          ccity : ""
+          dsisp : ""
          }); // reset the form
     } catch(err) {
         console.error(err.message); //console log the error
@@ -58,9 +58,9 @@ const Update = () => {
   const handleSubmit5 = async (e) => {
     
     try {
-      await axios.put(`http://localhost:8080/updateFee/${cid}`, newForm);
+      await axios.put(`http://localhost:8080/updateIP/${did}`, newForm);
         setNewForm({ 
-          cfee : ""
+          dip : ""
          }); // reset the form
     } catch(err) {
         console.error(err.message); //console log the error
@@ -69,9 +69,9 @@ const Update = () => {
   const handleSubmit6 = async (e) => {
     
     try {
-      await axios.put(`http://localhost:8080/updateAttendance/${cid}`, newForm);
+      await axios.put(`http://localhost:8080/updatePDistance/${did}`, newForm);
         setNewForm({ 
-          cattendance : ""
+          dpdistance : ""
          }); // reset the form
     } catch(err) {
         console.error(err.message); //console log the error
@@ -80,16 +80,16 @@ const Update = () => {
   const handleSubmit7 = async (e) => {
     
     try {
-      await axios.put(`http://localhost:8080/updateBudget/${cid}`, newForm);
+      await axios.put(`http://localhost:8080/updateCDistance/${did}`, newForm);
         setNewForm({ 
-          cbudget : ""
+          dcdistance : ""
          }); // reset the form
     } catch(err) {
         console.error(err.message); //console log the error
     }
   };
   const handleChange = (e) => {
-    if (e.target.name === 'budget' && e.target.value === '') {
+    if (e.target.name === 'dip' && e.target.value === '') {
       setNewForm(prev => ({...prev, [e.target.name]: 0}));
     } else {
     setNewForm(prev => ({...prev, [e.target.name]: e.target.value})); //set the state to the value of the input
@@ -99,7 +99,7 @@ const Update = () => {
     return (
         <div>
             <meta charSet="utf-8" />
-            <title>Meeting Makers</title>
+            <title>Proxy Detection</title>
             <Navbar />
             <link rel="stylesheet" href="../css/style.css" />
             {/* <link rel="stylesheet" href="css/style.css" /> */}

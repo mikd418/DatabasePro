@@ -7,12 +7,12 @@ const Login = () => {
       return (
         <div>
           <meta charSet="utf-8" />
-          <title>Meeting Makers</title>
+          <title>Proxy Detection</title>
           <Navbar />
           <link rel="stylesheet" href="css/style.css" />
           <div className="container">
             <form>
-              <label class=".formatty" htmlFor="uname">Organization Name</label>
+              <label class=".formatty" htmlFor="uname">Email</label>
               <input type="text" id="uname" name="uname" placeholder="Email" />
               <label htmlFor="password">Password</label>
               <input type="password" id="password" name="password" placeholder="Password" />
