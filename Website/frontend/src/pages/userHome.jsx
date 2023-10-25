@@ -11,41 +11,41 @@ const Home = () => {
  // const { oid } = useParams();
 
   const navigate = useNavigate();
-  const [conferences, setConferences] = useState([]);
-  const [organizations, setOrganization] = useState([]); // creates the JSON objects. where we store the response
+  //const [conferences, setConferences] = useState([]);
+  const [device, setDevice] = useState([]); // creates the JSON objects. where we store the response
 
 
   useEffect(() => {
-    const getConferences = async () => {
+    const getDevice = async () => {
       try {
-        const res = await axios.get(`http://localhost:8080/getMeetings`)
-        setConferences(res.data);
+        const res = await axios.get(`http://localhost:8080/getDevices`)
+        setDevice(res.data);
       }
       catch(err) {
         console.error(err.message);
       }
     }
-    getConferences();
+    //getConferences();
   }  , []);
 
-  useEffect(() => {
+  //useEffect(() => {
      // like a wrapper. use an asycn
-     const getOrganization = async () => {
-      try {
-        const res = await axios.get("http://localhost:8080/user/1")
-        setOrganization(res.data); // takes the response and places it in organization variable
-      }
-      catch(err) {
-        console.error(err.message);
-      }
-    }
-    getOrganization(); 
-  }, []);
+     //const getOrganization = async () => {
+      //try {
+       //const res = await axios.get("http://localhost:8080/user/1")
+        //setOrganization(res.data); // takes the response and places it in organization variable
+      //}
+     // catch(err) {
+        //console.error(err.message);
+     // }
+   // }
+   // getOrganization(); 
+  //}, []);
   
-  const handleClick = (cid) => {
-    navigate(`/meeting/${cid}`)
+  const handleClick = (did) => {
+    navigate(`/meeting/${did}`)
   }
-  const handleDelete = async (cid) => {
+  const handleDelete = async (did) => {
     try {
       await axios.delete("http://localhost:8080/delete/" + cid); //axios call to the backend
       window.location.reload(); //reloads the page
@@ -59,35 +59,33 @@ const Home = () => {
     <div>
       <div>
         <meta charSet="utf-8" />
-        <title>Meeting Makers</title>
+        <title>Device Proxy</title>
         <link rel="stylesheet" href="css/style.css" />
       </div>
       <Navbar />
         <section> 
         <div>
-          <div id={organizations.oid} className="container">
-          <h>{organizations.oname}</h>
+          <div id={device.did} className="container">
+          <h>{device.dlocation}</h>
           <br />
-          <h>{organizations.ophone}, {organizations.oemail}</h>
+          <h>{device.dip}, {device.dpisp}</h>
           </div>
         </div>
         </section>
         <section className="header">
-          <h1>My Events</h1>
-          <p>Connect. Meet. Collaborate.</p>
+          <h1>My Devices</h1>
+          <p>Detecting Proxies</p>
         </section>
       <div>
-        {conferences.map((conference) => (
+        {conferences.map((device) => (
           <div >
-            <h2 style={{ cursor: 'pointer' }} id={conference.cid} className="container" onClick={() => handleClick(conference.cid)}>{conference.cname}</h2>
-            <p>{conference.hname}, {conference.haddress},{conference.hstate}, {conference.hcity}, {conference.hzip} </p>
-            <p>{conference.cstartdate} to {conference.cenddate} </p>
+            <h2 style={{ cursor: 'pointer' }} id={device.did} className="container" onClick={() => handleClick(device.did)}>{device.dlocation}</h2>
             <br />
             <br />
-            <Link to={`/updateForm/${conference.cid}`}>
+            <Link to={`/updateForm/${device.did}`}>
               <input type="submit" value="Update Meeting" />
             </Link>
-            <button type="submit" onClick={()=>handleDelete(conference.cid)}>Delete Meeting</button>
+            <button type="submit" onClick={()=>handleDelete(device.did)}>Delete Device</button>
           </div>
         ))}
         </div>
