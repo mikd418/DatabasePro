@@ -27,7 +27,6 @@ function App() {
             <Route path="/form" element={<Form/>} />
             <Route path="/todos" element={<Todos/>} />
             <Route path="/updateForm/:did?" element={<Update/>} />
-            <Route path="/meeting/:did?" element={<Meeting/>} />
           </Routes>
         </BrowserRouter>
       </div>

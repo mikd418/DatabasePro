@@ -47,7 +47,7 @@ const Home = () => {
   }
   const handleDelete = async (did) => {
     try {
-      await axios.delete("http://localhost:8080/delete/" + cid); //axios call to the backend
+      await axios.delete("http://localhost:8080/delete/" + did); //axios call to the backend
       window.location.reload(); //reloads the page
     }
     catch (err) {
@@ -77,7 +77,7 @@ const Home = () => {
           <p>Detecting Proxies</p>
         </section>
       <div>
-        {conferences.map((device) => (
+        {device.map((device) => (
           <div >
             <h2 style={{ cursor: 'pointer' }} id={device.did} className="container" onClick={() => handleClick(device.did)}>{device.dlocation}</h2>
             <br />
