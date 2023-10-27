@@ -10,7 +10,7 @@ const client = new Client.Client({
   host: '127.0.0.1',
   database: 'capstone',
   password: 'password', // this is the password to get into your postgresql, not the server
-  port: 3306,
+  port: 5432,
 })
 client.connect(function(err) {
   if (err) throw err;
